@@ -55,42 +55,21 @@ Um exemplo de linguagem declarativa é o Prolog
 
 ```java
 
-
-
 import java.util.Scanner;
-
-
 
 public class DobroNumero {
 
+    public static void main(String[] args) {
 
+        Scanner scan = new Scanner(System.in);
 
-            public static void main(String\\\[] args) {
+        System.out.println("Digite um número:");
+        int numero = scan.nextInt();
 
+        int resultado = numero * 2;
 
-
-            Scanner scan = new Scanner(System.in);
-
-
-
-            System.out.println("Digite um número:");
-
-            int numero = scan.nextInt();
-
-
-
-            int resultado = numero \\\* 2;
-
-
-
-            System.out.println("O dobro é: " + resultado);
-
-
-
-       }
-
-
-
+        System.out.println("O dobro é: " + resultado);
+    }
 }
 
 ```
@@ -115,32 +94,18 @@ diz exatamente como o problema deve ser resolvido:
 ```prolog
 
 dobro(Numero, Resultado) :-
-
-&#x20;  Resultado is Numero \* 2.
-
-
+    Resultado is Numero * 2.
 
 :- initialization(main).
 
-
-
 main :-
+    write('Digite um número: '),
+    read(Numero),
 
+    dobro(Numero, Resultado),
 
-
-&#x20;  write('Digite um número: '),
-
-&#x20;  read(Numero),
-
-
-
-&#x20;  dobro(Numero, Resultado),
-
-
-
-&#x20;  write('O dobro é: '),
-
-&#x20;  write(Resultado), nl.
+    write('O dobro é: '),
+    write(Resultado), nl.
 
 ```
 
